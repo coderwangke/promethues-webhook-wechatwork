@@ -1,4 +1,4 @@
-## promethues webhook wechatwork
+## Promethues Webhook Wechatwork
 
 基于promethues webhook实现，能够发送alert告警信息到企业微信群中。
 
