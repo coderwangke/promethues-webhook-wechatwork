@@ -4,7 +4,6 @@ metadata:
   labels:
     app: webhook-wechat-work
   name: webhook-wechat-work
-  namespace: default
 spec:
   replicas: 1
   selector:
