@@ -30,3 +30,7 @@ $ make push
 ```shell script
 $ kubeclt apply -f /deploy/deployment.yaml
 ```
+
+#### 相关链接
+
+- 群机器人配置方法：https://work.weixin.qq.com/help?doc_id=13376
