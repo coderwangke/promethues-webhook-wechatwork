@@ -20,7 +20,7 @@ spec:
           name: webhook
           args:
             - -url
-            - <webhook-url> 
+            - https://www.example.com
       dnsPolicy: ClusterFirst
       restartPolicy: Always
 
