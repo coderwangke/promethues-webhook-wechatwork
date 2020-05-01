@@ -1,3 +1,3 @@
 FROM alpine:latest
-COPY ./bin/promethues-webhook-wechatwork /usr/bin
-ENTRYPOINT ["/promethuess-webhook-wechatwork"]
+COPY ./bin/promethues-webhook-wechatwork /
+ENTRYPOINT ["/promethues-webhook-wechatwork"]

@@ -2,7 +2,7 @@ BINARY_NAME := $(shell basename "$(PWD)")
 GOBASE := $(shell pwd)
 GOBIN := $(GOBASE)/bin
 
-VERSION := $(shell git describe --tags --always)
+VERSION := "latest"
 
 GOOS := "linux"
 GOARCH := "amd64"
@@ -12,9 +12,18 @@ IMAGE_NAME := hale/$(BINARY_NAME)
 
 all: build
 
+
+test:
+	@echo "  >  Testing..."
+	@go test
+
+lint:
+	@echo "  >  Linting..."
+	@golint
+
 build:
 	@echo "  >  Building binary..."
-	@GOOS=$(GOOS) GOARCH=$(GOARCH) go build -o $(GOBIN)/$(BINARY_NAME) main.go
+	@GOOS=$(GOOS) GOARCH=$(GOARCH) go build -o $(GOBIN)/$(BINARY_NAME) *.go
 
 image:
 	@echo "  >  Building image..."
