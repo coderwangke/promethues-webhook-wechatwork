@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"flag"
+	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -43,7 +44,10 @@ func init() {
 func responseWithJSON(w http.ResponseWriter, code int, payload interface{}) {
 	response, _ := json.Marshal(payload)
 	w.WriteHeader(code)
-	w.Write(response)
+	_, err := w.Write(response)
+	if err != nil {
+		log.Printf("ERROR write body: %v\n", err)
+	}
 }
 
 func healthz(w http.ResponseWriter, r *http.Request) {
