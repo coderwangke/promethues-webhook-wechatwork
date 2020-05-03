@@ -7,5 +7,5 @@ COPY . .
 RUN go build -o promethues-webhook-wechatwork ./...
 
 FROM alpine:latest
-COPY --from=build-env ./src/promethues-webhook-wechatwork /
+COPY --from=build-env /go/src/promethues-webhook-wechatwork /
 ENTRYPOINT ["/promethues-webhook-wechatwork"]
