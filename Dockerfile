@@ -4,7 +4,7 @@ MAINTAINER wangkehenan <wangkehenan@gmail.com>
 RUN apk add --no-cache git
 WORKDIR /src
 COPY . .
-RUN go build -o promethues-webhook-wechatwork *.go
+RUN go build -o promethues-webhook-wechatwork ./...
 
 FROM alpine:latest
 COPY --from=build-env ./src/promethues-webhook-wechatwork /
